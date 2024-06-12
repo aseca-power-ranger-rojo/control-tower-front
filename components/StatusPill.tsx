@@ -18,7 +18,7 @@ const StatusPill = ({ status }:{ status:string }) => {
             case "COMPLETED":
                 return <Icon name="check" size={24} color="#000" />;
             default:
-                return  <Icon name="more-horiz" size={24} color="#000" />;
+                return  <Icon name="close" size={24} color="#000" />;
         }
     };
 
@@ -40,7 +40,6 @@ const StatusPill = ({ status }:{ status:string }) => {
             >
                 {renderIcon(status)}
             </View>
-            <Text style={styles.statusText}>{statusMap[status]}</Text>
         </View>
     );
 };

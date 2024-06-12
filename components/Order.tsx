@@ -25,11 +25,18 @@ const Order = ({
     <View style={styles.card} id={order.id}>
       <View style={styles.infoContainer}>
         <Text style={styles.header}>Order ID:</Text>
-        <Text style={styles.body}>{order.id}</Text>
+        <Text style={styles.body}>{order.orderId}</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <StatusPill status={order.pickingStatus} />
-        <StatusPill status={order.deliveryStatus} />
+        <View style={styles.infoContainer}>
+          <StatusPill status={order.pickingStatus} />
+          <Text style={styles.body}>PICKING</Text>
+        </View>
+
+        <View style={styles.infoContainer}>
+          <StatusPill status={order.deliveryStatus} />
+          <Text style={styles.body}>DELIVERY</Text>
+        </View>
       </View>
     </View>
   );
@@ -45,7 +52,8 @@ const styles = StyleSheet.create({
   },
   infoContainer: {
     flexDirection: "column",
-  },
+    alignItems: "center",
+     },
   header: {
     fontSize: 20,
     fontWeight: "bold",
